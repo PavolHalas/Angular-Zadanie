@@ -1,0 +1,34 @@
+<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+  <div class="main-div">
+    <h1>Aareon Angular Test</h1>
+    <div class="form-group">
+      <label>Title</label>
+      <select name="title" [ngModel]="defaultTitle">
+        <option value="">-- Select an option --</option>
+        <option *ngFor="let option of filteredTitles" [value]="option.name">{{option.name}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="firstname">First name</label>
+      <input name="firstname" class="input-control" type="text" placeholder="First name" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="lastname">Last name</label>
+      <input id="lastname" name="lastname" class="input-control" type="text" placeholder="Last name" ngModel required
+        #lastname="ngModel">
+    </div>
+    <div class="form-group">
+      <label></label>
+      <small class="input-control"
+        *ngIf="(lastname.invalid && lastname.touched) || (lastname.invalid && buttonClicked)">* Last name is
+        mandatory</small>
+    </div>
+    <div id="check-input">
+      <input name="acceptTerm" type="checkbox" id="acceptTerm" [(ngModel)]="acceptTerm">
+      <label for="acceptTerm">I accept the terms & conditions</label>
+    </div>
+    <div id="submit">
+      <button [disabled]="!acceptTerm">Submit</button>
+    </div>
+  </div>
+</form>

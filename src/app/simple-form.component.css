@@ -1,0 +1,46 @@
+.main-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  padding: 1em;
+}
+
+.form-group {
+  display: flex;
+}
+
+.form-group label {
+  display: block;
+  align-self: center;
+  width: 8em;
+  font-weight: bold;
+}
+
+.form-group .input-control {
+  flex-grow: 1;
+  display: block;
+}
+
+#check-input {
+  display: inline-flex;
+  margin-left: 0.7em;
+  gap: 0.5em;
+}
+
+#submit {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  align-self: flex-end;
+}
+
+input.ng-invalid.ng-touched,
+.ng-invalid.ng-submitted input#lastname {
+  border: red 0.2em solid;
+}
+
+small {
+  color: red;
+}
